@@ -1,0 +1,543 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+/*基本設定*/
+html{
+    font: size 100%;
+}
+
+body {
+    color: black;
+    font-family: serif;
+    font-weight: 800;
+    width: 100%;
+    font-family: Serif;
+    background-color:transparent;
+   /* background:linear-gradient(90deg,rgb(209, 233, 255) ,rgb(255, 188, 65));*/
+} 
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+a:hover{
+  opacity: 0.5;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    /*インライン要素のボックスの垂直方向の配置を決める*/
+}
+  
+li {
+    list-style: none;
+}
+
+
+.wrapper {
+  max-width: 800px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+/* MainとFooter全体を囲むクラス */
+
+.container {
+  color:black;
+  text-align: center;
+
+}
+
+
+
+/*-------------------------------------------------ヘッダーメニューはここから！！-----------------------------------------------------*/
+.logo {
+  line-height: 1px;
+  position: fixed;
+  top: 35px;
+  left: 30px;
+  /* 一番上にくるように設定 */
+  z-index: 40;
+  display: none;
+}
+.logo a {
+  display: block;
+}
+
+#navi {
+    width: 100%;
+    background-color:gray;
+    color:black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: 0.6s;
+    z-index: 30; /* ロゴ、ハンバーガーより下でアクセスの背景画像よりも上 */
+   
+  }
+  #navi ul {
+    width: 100%;
+    background-color:white;
+    padding: 80px 0 30px 0;
+  }
+  #navi ul li {
+    padding: 10px 0;
+  }
+  #navi ul li a {
+    display: block;
+  }
+
+  #navi.active {
+    transform: translateY(0%);
+    /*jQueryで#naviにactiveクラスを追加して、メニューを上から下にスライドさせて表示*/
+  }
+  
+
+  
+  .hamburger {
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    z-index: 40; /* 一番上にくるように設定 */
+    /*display: none;*/
+  }
+  .hamburger span {
+    width: 30px;
+    height: 1px;
+    background-color:black;
+    position: absolute;
+    left: 6px;
+    transition: 0.5s ease-in-out;
+  }
+  .hamburger span:nth-child(1) {
+    top: 11px;
+  }
+  .hamburger span:nth-child(2) {
+    top: 21px;
+  }
+  .hamburger span:nth-child(3) {
+    top: 31px;
+  }
+  .hamburger.active span:nth-child(1) {
+    top: 21px;
+    left: 6px;
+    transform: rotate(-45deg);
+  }
+  .hamburger.active span:nth-child(2),
+  .hamburger.active span:nth-child(3) {
+    top: 21px;
+    transform: rotate(45deg);
+  }
+
+/*--------------------------------------------いちばん上の写真！！------------------------------------------------------------*/
+#mainvisual {
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  /* スクロールで画像を拡大させたとき、横スクロールを出さない*/
+}
+
+#mainvisual img {
+  width: calc(100%/3);
+  height: 100vh;
+  flex-shrink: 0;
+  /*jQueryで画像を拡大したとき、画像が縮まないように設定*/
+  object-fit: cover;
+}
+
+
+
+/*------------------------------------------------タイトル--------------------------------------------------------------------*/
+.site-title {
+    font-size: 6.25rem;
+    font-weight: 1000;
+    letter-spacing: 0.03em;
+    margin: 100px 0;
+    font-family: 'Work sans';
+    color:black;
+    position:absolute;
+    top:100px;
+    left:100px;
+    text-shadow:1px 2px 3px white;
+}
+
+.section-title {
+    display: inline-block;
+    font-size: 4.75rem;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    margin-bottom: 5px;
+    font-family: 'Work Sans';
+    
+  }
+
+/*-------------------------------------------フッターはここ！！-------------------------------------------------------------*/  
+  #footer {
+    margin-top: -100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-top: solid 1px #fff;
+    font-size: 0.75rem;
+    padding: 80px 30px;
+    text-align: left;
+    font-family: 'Work Sans';
+  }
+
+  #footer{
+    height: 100px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.footer-logo{
+    padding: 20px;
+    color:black;
+    font-size: 40px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.footer-list li{
+    float: left;
+    color:black;
+    padding:40px
+}
+
+/*SNSアイコンの設定*/
+
+.btn-wrapper a{
+   background-color:rgba(169, 169, 169, 0.408);
+   color: #333;
+   display: inline-block;
+   border-radius: 50%;
+   font-size: 13px;
+   height: 44px; 
+   line-height: 44px;
+   text-align: center;
+   width: 44px;
+   margin: 1px 40px 40px 40px;
+   float: left;
+   text-align: center;
+  }
+
+.btn-wrapper a:hover{
+  background-color:pink;
+}
+
+/*------------------------------------------------アクセス-------------------------------------------------------------*/
+  
+  #access {
+    display:flexbox; 
+    position:relative;  
+  }
+
+#access {
+  text-align:center;
+  margin-top: 100px;
+  margin-bottom: 280px;
+}
+
+  #access .place {
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  #access .address {
+    margin-bottom: 20px;
+  }
+  #access .contact {
+    margin-bottom: 30px;
+  }
+  #access .btn {
+    border: solid 1px black;
+    color:black;
+    display: inline-block;
+    padding: 15px 82px;
+    transition: 0.3s;
+  }
+  
+  /*------------------------------お問い合わせフォーム-------------------------------------------*/
+  
+  #contact {
+    text-align: center;
+    margin-top: -150px;
+    margin-bottom: 200px;
+    position: relative;
+    z-index: 20;/*コンテンツが背景画像の上にくるようにする*/
+   
+  }
+  #contact .btn {
+    width: 400px;
+    border: solid 1px black;
+    color:black;
+    display: block;
+    padding: 30px 0;
+    margin: 0 auto 20px auto;
+    position: relative;
+    transition: 0.3s;
+  }
+  
+   
+  #contact .btn {
+      width: 100%;
+    }
+  
+
+#footer {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 60px 30px;
+}
+#footer .sns {
+  margin-bottom: 30px;
+}
+
+/*---------------------*/
+.login{
+  border: solid 1px black;
+  position: fixed;
+  right: -50px;
+  bottom: 420px;
+ transform: rotate(-90deg);
+  transition: 0.6s;
+  z-index: 30;
+  width: 165px;
+  font-size: 0.875rem;
+  display: inline-block;
+  letter-spacing: 0.1em;
+  padding: 15px 0;
+  transition: 0.3s;
+  text-align: center;
+  cursor: pointer;;
+}
+
+.login:hover {
+  opacity: 0.7;
+}
+  
+
+.login-modal-wrapper, .signup-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color:black;
+  padding: 20px 0 40px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: white;
+  cursor: pointer;
+}
+
+#login-form {
+  width: 100%;
+}
+
+#login-form h2 {
+  color: white;
+  font-family: 'Work San';
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+#login-form input {
+  width: 320px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  padding: 12px 12px;
+  border: 1px solid #d0d5d8;
+}
+
+#submit-btn {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: white;
+  border: none;
+  color:black;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+
+
+
+ul#polaroids li a { 
+   width: 200px;
+   height:200px;   
+    float: left;
+    padding: 10px 10px 20px;
+    background-color: white;
+    -moz-box-shadow: 0 4px 10px #333;
+    -webkit-box-shadow: 0 4px 10px #333;
+    box-shadow: 0 4px 10px #333;
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    transform: rotate(5deg);
+
+  }
+  
+  ul#polaroids li:nth-child(2n+1) a {
+      -webkit-transform: rotate(-10deg);
+      -moz-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+      position: relative;
+      top: -5px;
+    }
+    
+    ul#polaroids li:nth-child(3) a {
+      -webkit-transform: rotate(30deg);
+      -moz-transform: rotate(30deg);
+      transform: rotate(30deg);
+      position: relative;
+      top: -10px;
+      left: 30px;
+    }
+    ul#polaroids li:nth-child(4) a {
+      position: relative;
+      top: -10px;
+      left: 10px;
+    }
+
+    ul#polaroids li:nth-child(6) a {
+      -webkit-transform: rotate(5deg);
+      -moz-transform: rotate(5deg);
+      transform: rotate(5deg);
+      position: relative;
+      top: -5px;
+      margin-left: 70px;
+
+
+    }
+    
+    ul#polaroids li:nth-child(7) a {
+      -webkit-transform: rotate(-30deg);
+      -moz-transform: rotate(-30deg);
+      transform: rotate(-30deg);
+      position: relative;
+      top: -10px;
+      left: 30px;
+    }
+
+
+    .polaroid-wrapper {
+      margin-top: 10px;
+      margin-left: 100px;
+      background-color: transparent;
+    }
+
+    ul#polaroids li a:hover {
+    transform: scale(1.3);
+    z-index: 100;
+    opacity:1;
+    }
+    
+    
+.slider img {
+  height: 600px;
+  width: 320px;
+  display: flex;
+  margin:0 auto;
+  float:left;
+  padding:0 40px
+}
+
+.slider {
+  margin-top:1000px;
+  width: 50%;
+}
+
+.slider img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#top{
+  max-width: 120%;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap:wrap;/*折り返し設定をする*/
+  justify-content: space-between;/*等間隔に配置*/
+  
+}
+
+.product-list li {
+  width: 12%;
+  margin:5px -1px;
+}
+
+.bg{
+  background-image: url(./newimg/img_1.jpg);
+  background-repeat: no-repeat;
+  background-size: 160px 170px;
+  background-position: 15% 0%;
+}
+.bg2{
+  background-image: url(./newimg/img_1_1.jpg);
+  background-repeat: no-repeat;
+  background-size: 160px 170px;
+  background-position: 80% 0%;
+}
+
+
+.category li {
+  display:flex;
+  float: left;
+  flex-wrap:wrap;/*折り返し設定をする*/
+  justify-content: space-between;/*等間隔に配置*/
+  width: 23%;
+  margin:10px 5px;
+  left: 100px;
+
+}
+
+.category li p{
+  position: relative;
+  top:-50%;
+  left:0%;
+  z-index: 10;
+}
+
+.category li:hover {
+ cursor: pointer;
+ opacity: 0.5;
+}
+
+.bg3{
+  background-image: url(./newimg/img_3.jpg);
+  background-repeat: no-repeat;
+  background-size: 160px 170px;
+  background-position: 100% 30%;
+}
+
+.bg4{
+  background-image: url(./newimg/img_04.jpg);
+  background-repeat: no-repeat;
+  background-size: 160px 170px;
+  background-position: 0% 10%;
+}
